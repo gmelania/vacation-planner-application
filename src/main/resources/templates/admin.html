@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="static/styles/style.css">
+<!--
+    Only the admin has access to this page!
+    Manage Vacations table page.
+-->
+
+    <head>
+        <meta charset="utf-8">
+        <link th:href="@{styles/style.css}" rel="stylesheet" />
+        <title>Admin - Vacation Management</title>
+    </head>
+
+    <body>
+        <h1>Manage Vacations</h1>
+        <form th:action="@{/admin/add-vacationEntity}" method="post">
+            <input type="text" name="name" placeholder="Vacation Name" required>
+            <input type="text" name="destination" placeholder="Destination" required>
+            <input type="text" name="status" placeholder="Status" required>
+            <button type="submit">Add Vacation</button>
+        </form>
+
+        <h2>Existing Vacations</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Destination</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr th:each="vacationEntity : ${vacations}">
+                    <td th:text="${vacationEntity.name}">Vacation Name</td>
+                    <td th:text="${vacationEntity.destination}">Destination</td>
+                    <td th:text="${vacationEntity.status}">Status</td>
+                    <td>
+                        <button th:onclick="'deleteVacation(' + ${vacationEntity.id} + ')'">Delete</button>
+                        <button th:onclick="'editVacation(' + ${vacationEntity.id} + ')'">Edit</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

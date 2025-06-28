@@ -1,0 +1,209 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', sans-serif;
+}
+
+/* Body */
+body {
+    background: url("https://i.pinimg.com/1200x/d3/6e/d8/d36ed858085a943f66cfc53ee874cec5.jpg") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: "Courier New", sans-serif;
+    color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+}
+
+/* Buttons */
+button {
+    background: rgb(152, 227, 237);
+    color: rgba(255, 255, 255, 0.95);
+    border: none;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #7bb6c1;
+}
+
+/* Forms */
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.26);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.85)
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form input[type="submit"] {
+    width: 100%;
+    background: rgba(244, 206, 178, 0.79);
+    color: #ffeee3;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background: rgb(146, 218, 232);
+}
+
+/* Links */
+a {
+    color: #98e3ed;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ffeee3;
+}
+
+/* Containers */
+.container {
+    background: rgba(27, 27, 27, 0.51);
+    max-width: 600px;
+    margin: auto;
+    padding: 0 20px;
+    border-radius: 20px;
+    width: 80%;
+}
+
+.center {
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #f1f1f1;
+    color: #555;
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+table th,
+table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+    color: rgb(74, 70, 67);
+}
+
+table th {
+    background: rgba(232, 195, 154, 0.76);
+    color: #fff;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.58);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background-color: #ff4343;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #9a0000;
+}
+
+.edit-btn {
+    background-color: #77b6ff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #3890ff;
+}
+
+td.actions, th.actions {
+    width: 150px;
+    text-align: center;
+}

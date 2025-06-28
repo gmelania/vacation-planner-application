@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        body {
+            background: url("https://i.pinimg.com/1200x/d3/6e/d8/d36ed858085a943f66cfc53ee874cec5.jpg") no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Courier New', sans-serif;
+            color: rgba(255, 255, 255, 0.85);
+            text-align: center;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.63);
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+        }
+
+        .buttons {
+            margin: 20px 0;
+        }
+
+        .buttons a {
+            margin: 0 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #e3bb90;
+            color: #ffeee3;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #98e3ed;
+        }
+
+        nav a {
+            color: #ffeee3;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        input[type="email"], input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .error-message {
+            color: #ff6c6c;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Sign In</h2>
+    <h4 style="color:rgba(255,238,227,0.72)">Please enter your credentials:</h4>
+    <form th:action="@{/login}" method="post">
+        <label for="username">Email:</label>
+        <input type="email" id="username" name="username" placeholder="Enter your email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+        <button type="submit">Login</button>
+
+        <p th:if="${param.error}" class="error-message">Invalid email or password. Please try again.</p>
+
+        <section>
+            <h4>
+                Don't have an account? Register
+                <a th:href="@{/register}" class="button-link">here</a>.
+            </h4>
+        </section>
+    </form>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<!--
+    Shows the Homepage.
+-->
+
+<head>
+    <meta charset="utf-8">
+    <link th:href="@{/styles/style.css}" rel="stylesheet" />
+    <title>Vacation Planner</title>
+    <style>
+        body {
+            background: url("https://i.pinimg.com/1200x/d3/6e/d8/d36ed858085a943f66cfc53ee874cec5.jpg") no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: sans-serif;
+            color: rgba(255, 255, 255, 0.85);
+            text-align: center;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.63);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .buttons {
+            margin: 20px 0;
+        }
+
+        .buttons a {
+            margin: 0 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #e3bb90;
+            color: #ffeee3;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #98e3ed;
+        }
+
+        nav a {
+            color: #ffeee3;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <script>
+        function showLoginMessage(event) {
+            event.preventDefault();
+            alert('Please log into your account or register first.');
+        }
+    </script>
+</head>
+
+<body>
+<div class="container">
+
+<h1>My Vacation Planner</h1>
+    <div class="buttons">
+        <a th:href="@{/login}"><button>Login</button></a>
+        <a th:href="@{/register}"><button>Register</button></a>
+    </div>
+
+    <section>
+        <nav>
+            <a id="viewVacationsLink" href="#">View Vacations</a>
+        </nav>
+    </section>
+</div>
+    <script>
+        document.getElementById('viewVacationsLink').addEventListener('click', showLoginMessage);
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <style>
+        body {
+            background: url("https://i.pinimg.com/1200x/d3/6e/d8/d36ed858085a943f66cfc53ee874cec5.jpg") no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: "Courier New", sans-serif;
+            color: rgba(255, 255, 255, 0.85);
+            text-align: center;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.63);
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+        }
+
+        button, input[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #e3bb90;
+            color: #ffeee3;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover, input[type="submit"]:hover {
+            background-color: #98e3ed;
+        }
+
+        nav a {
+            color: #ffeee3;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        input[type="email"], input[type="password"], input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .error {
+            color: #ff6c6c;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Register</h2>
+    <form th:action="@{/register}" method="post">
+        <!-- Email Field -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <!-- Password Field -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+        <!-- Nume Field -->
+        <label for="nume">Last name:</label>
+        <input type="text" id="nume" name="nume" placeholder="Enter your last name" required>
+
+        <!-- Prenume Field -->
+        <label for="prenume">First name:</label>
+        <input type="text" id="prenume" name="prenume" placeholder="Enter your first name" required>
+
+        <!-- Tara Field -->
+        <label for="tara">Country:</label>
+        <input type="text" id="tara" name="tara" placeholder="Enter your country" required>
+
+        <!-- Telefon Field -->
+        <label for="telefon">Phone:</label>
+        <input type="text" id="telefon" name="telefon" placeholder="Enter your phone number" required>
+
+        <!-- Register Button -->
+        <input type="submit" value="Register">
+    </form>
+
+    <p th:if="${error}" class="error" th:text="${error}"></p>
+    <p th:if="${success}" style="color: green;" th:text="${success}"></p>
+
+    <p>Already have an account? Log in <a th:href="@{/login}">here</a>.</p>
+</div>
+</body>
+</html>
